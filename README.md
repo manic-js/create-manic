@@ -1,16 +1,12 @@
 # `create-manic`
 
-Official project scaffolder for Manic.
+Scaffolding CLI for bootstrapping Manic applications.
 
 ## Documentation
 
 - Website: [manicjs.tech](https://www.manicjs.tech/)
 - Getting started: [manicjs.tech/docs/framework/getting-started](https://www.manicjs.tech/docs/framework/getting-started)
-- CLI reference: [manicjs.tech/docs/cli](https://www.manicjs.tech/docs/cli)
-
-## Requirements
-
-- [Bun](https://bun.sh) `>= 1.3.13`
+- Quick start: [manicjs.tech/docs/framework/quick-start](https://www.manicjs.tech/docs/framework/quick-start)
 
 ## Usage
 
@@ -21,12 +17,9 @@ bun install
 bun dev
 ```
 
-## What It Sets Up
+## Requirements
 
-- App structure (`app/`, routes, server entry)
-- Manic config (`manic.config.ts`)
-- Optional first-party plugin wiring
-- Lint/format scripts and project defaults
+- [Bun](https://bun.sh) `>= 1.3.13`
 
 ## License
 
