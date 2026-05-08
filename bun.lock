@@ -1,0 +1,15 @@
+{
+  "lockfileVersion": 1,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "create-manic",
+      "dependencies": {
+        "@manicjs/tui": "^1.0.2",
+      },
+    },
+  },
+  "packages": {
+    "@manicjs/tui": ["@manicjs/tui@1.0.2", "", {}, "sha512-IdlR5r7+LLdy8/i7oU+wtZ8jlepr/tZbCwdlsbWUS/PYbjP2C7HIVkztNZfD8rMPOsPOQUA4oR6Oy/hsJd58YQ=="],
+  }
+}
