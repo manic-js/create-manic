@@ -1,5 +1,10 @@
 {
-  "ignorePatterns": ["**/node_modules/**", "**/.manic/**", "**/dist/**", "**/build/**"],
+  "ignorePatterns": [
+    "**/node_modules/**",
+    "**/.manic/**",
+    "**/dist/**",
+    "**/build/**"
+  ],
   "plugins": ["react", "react-hooks", "react-perf"],
   "categories": {
     "correctness": "error",

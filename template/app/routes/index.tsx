@@ -1,25 +1,25 @@
-import { Link } from "manicjs";
-import { useTheme } from "manicjs/theme";
-import { useState, useCallback } from "react";
+import { Link } from 'manicjs';
+import { useTheme } from 'manicjs/theme';
+import { useState, useCallback } from 'react';
 
-const CONTENT_STYLE = { viewTransitionName: "content" };
-const LOGO_STYLE = { viewTransitionName: "logo" };
-const SUBTITLE_STYLE = { viewTransitionName: "subtitle" };
-const LINKBUTTON_STYLE = { viewTransitionName: "linkbutton" };
-const DOCSBUTTON_STYLE = { viewTransitionName: "docsbutton" };
+const CONTENT_STYLE = { viewTransitionName: 'content' };
+const LOGO_STYLE = { viewTransitionName: 'logo' };
+const SUBTITLE_STYLE = { viewTransitionName: 'subtitle' };
+const LINKBUTTON_STYLE = { viewTransitionName: 'linkbutton' };
+const DOCSBUTTON_STYLE = { viewTransitionName: 'docsbutton' };
 
 export default function Home() {
   const { isDark } = useTheme();
   const [state, setState] = useState(0);
 
-  const increment = useCallback(() => setState((s) => s + 1), []);
-  const decrement = useCallback(() => setState((s) => s - 1), []);
+  const increment = useCallback(() => setState(s => s + 1), []);
+  const decrement = useCallback(() => setState(s => s - 1), []);
 
   return (
     <main className="py-32 md:px-24 px-12 mx-auto flex items-start justify-center gap-32 flex-col max-w-screen-lg min-h-screen text-foreground">
       <div className="flex gap-6 flex-col">
         <img
-          src={isDark ? "/assets/wordmark.svg" : "/assets/wordmark-dark.svg"}
+          src={isDark ? '/assets/wordmark.svg' : '/assets/wordmark-dark.svg'}
           alt="MANIC."
           className="max-md:w-54 max-sm:w-54 transition-all duration-250"
           style={LOGO_STYLE}
@@ -32,8 +32,10 @@ export default function Home() {
 
       <div className="flex flex-col gap-5">
         <p className="text-foreground text-lg max-w-[500px]">
-          To get started, edit the{" "}
-          <code className="px-1 py-0.5 bg-white/5 rounded-md text-accent">routes/index.tsx</code>{" "}
+          To get started, edit the{' '}
+          <code className="px-1 py-0.5 bg-white/5 rounded-md text-accent">
+            routes/index.tsx
+          </code>{' '}
           file and see the speed of the HMR.
         </p>
         <div className="flex items-center w-44 overflow-hidden border-2 border-foreground/10 rounded-xl">
@@ -42,8 +44,18 @@ export default function Home() {
             className="flex items-center justify-center px-4 py-2 shrink-0 opacity-70 border-r-2 border-foreground/20"
             aria-label="Decrease counter"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M20 12H4"
+              />
             </svg>
           </button>
 
@@ -56,7 +68,12 @@ export default function Home() {
             className="flex items-center justify-center px-4 py-2 shrink-0 opacity-70 border-l-2 border-foreground/20"
             aria-label="Increase counter"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"

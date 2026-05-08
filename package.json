@@ -30,14 +30,14 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "prepare": "simple-git-hooks"
+  },
   "dependencies": {
     "@manicjs/tui": "1.0.1"
   },
   "devDependencies": {
     "simple-git-hooks": "^2.13.1"
-  },
-  "scripts": {
-    "prepare": "simple-git-hooks"
   },
   "simple-git-hooks": {
     "pre-commit": "bunx --bun oxlint . && bunx --bun oxfmt --check --config .oxfmt.json ."

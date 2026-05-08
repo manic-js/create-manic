@@ -57,8 +57,8 @@ A page **must export a default React component**:
 
 ```tsx
 // app/routes/about.tsx → /about
-import { Link } from "manicjs";
-import { useTheme } from "manicjs/theme";
+import { Link } from 'manicjs';
+import { useTheme } from 'manicjs/theme';
 
 export default function About() {
   const { isDark } = useTheme();
@@ -78,7 +78,7 @@ Use `[param]` in the filename for dynamic segments:
 
 ```tsx
 // app/routes/blog/[slug].tsx → /blog/:slug
-import { useRouter } from "manicjs";
+import { useRouter } from 'manicjs';
 
 export default function BlogPost() {
   const { params } = useRouter();
@@ -117,7 +117,7 @@ All framework functionality lives under `manicjs` and its sub-paths. **Always us
 **`<Router>`** — Top-level SPA router. Reads `window.__MANIC_ROUTES__`, matches current URL, lazy-loads the page component, renders `<NotFound>` for unmatched paths.
 
 ```tsx
-import { Router } from "manicjs";
+import { Router } from 'manicjs';
 // Props (all optional):
 //   routes?: Record<string, () => Promise<{ default: ComponentType }>>
 //   — defaults to window.__MANIC_ROUTES__
@@ -142,7 +142,7 @@ import { Link } from "manicjs";
 **`<NotFound>`** — Built-in 404 page with animated dot-canvas background. Used automatically by `<Router>` when no route matches.
 
 ```tsx
-import { NotFound } from "manicjs";
+import { NotFound } from 'manicjs';
 ```
 
 #### Hooks
@@ -150,7 +150,7 @@ import { NotFound } from "manicjs";
 **`useRouter()`** — Access current route context. Throws if called outside `<Router>`.
 
 ```tsx
-import { useRouter } from "manicjs";
+import { useRouter } from 'manicjs';
 
 const { path, navigate, params } = useRouter();
 // path:     string — current pathname
@@ -161,10 +161,10 @@ const { path, navigate, params } = useRouter();
 **`useQueryParams()`** — Access URL search params. Re-renders on popstate.
 
 ```tsx
-import { useQueryParams } from "manicjs";
+import { useQueryParams } from 'manicjs';
 
 const params = useQueryParams(); // Returns URLSearchParams
-const q = params.get("q");
+const q = params.get('q');
 ```
 
 #### Functions
@@ -172,21 +172,21 @@ const q = params.get("q");
 **`navigate(to)`** — Programmatic navigation. Works outside React components. Loads target component before pushing history. Uses View Transitions if enabled.
 
 ```tsx
-import { navigate } from "manicjs";
-await navigate("/dashboard");
+import { navigate } from 'manicjs';
+await navigate('/dashboard');
 ```
 
 **`preloadRoute(path)`** — Eagerly load a route's component into cache. Used internally by `<Link>` on hover, but can be called manually.
 
 ```tsx
-import { preloadRoute } from "manicjs/router";
-preloadRoute("/about"); // Starts loading the chunk immediately
+import { preloadRoute } from 'manicjs/router';
+preloadRoute('/about'); // Starts loading the chunk immediately
 ```
 
 **`setViewTransitions(enabled)`** — Globally enable/disable View Transitions API for all `navigate()` calls.
 
 ```tsx
-import { setViewTransitions } from "manicjs/router";
+import { setViewTransitions } from 'manicjs/router';
 setViewTransitions(false); // Disable view transitions
 ```
 
@@ -195,14 +195,14 @@ setViewTransitions(false); // Disable view transitions
 **`RouterContext`** — Raw React context. Use `useRouter()` instead unless you need to mock in tests.
 
 ```tsx
-import { RouterContext } from "manicjs/router";
+import { RouterContext } from 'manicjs/router';
 // type: React.Context<RouterContextValue | null>
 ```
 
 #### Types
 
 ```tsx
-import type { RouteDef, RouterContextValue } from "manicjs/router";
+import type { RouteDef, RouterContextValue } from 'manicjs/router';
 
 interface RouteDef {
   path: string;
@@ -226,7 +226,7 @@ interface RouterContextValue {
 **`<ThemeProvider>`** — Wrap your app to enable theme management. Reads initial theme from `localStorage`, applies `dark` class on `<html>`, subscribes to `prefers-color-scheme` for system mode.
 
 ```tsx
-import { ThemeProvider } from "manicjs/theme";
+import { ThemeProvider } from 'manicjs/theme';
 
 <ThemeProvider>
   <Router />
@@ -252,7 +252,7 @@ import { ThemeToggle } from "manicjs/theme";
 **`useTheme()`** — Full theme state and controls. Throws if called outside `<ThemeProvider>`.
 
 ```tsx
-import { useTheme } from "manicjs/theme";
+import { useTheme } from 'manicjs/theme';
 
 const {
   theme, // "light" | "dark" | "system" — stored preference
@@ -287,7 +287,7 @@ Available tags: `div`, `span`, `main`, `section`, `article`, `header`, `footer`,
 Alternatively, set view transitions inline (as done in this project):
 
 ```tsx
-<div style={{ viewTransitionName: "content" }}>...</div>
+<div style={{ viewTransitionName: 'content' }}>...</div>
 ```
 
 Also re-exports `navigate` and `setViewTransitions` from `manicjs/router`.
@@ -301,17 +301,17 @@ Client-safe environment variable access. Only `MANIC_PUBLIC_*` vars are accessib
 **`getEnv(key)`** — Read a single env var.
 
 ```tsx
-import { getEnv } from "manicjs/env";
+import { getEnv } from 'manicjs/env';
 
 // Client: only MANIC_PUBLIC_* keys work (others log a warning, return undefined)
 // Server: any key works via process.env
-const apiUrl = getEnv("MANIC_PUBLIC_API_URL");
+const apiUrl = getEnv('MANIC_PUBLIC_API_URL');
 ```
 
 **`getPublicEnv()`** — Get all public env vars as an object.
 
 ```tsx
-import { getPublicEnv } from "manicjs/env";
+import { getPublicEnv } from 'manicjs/env';
 
 const env = getPublicEnv(); // { MANIC_PUBLIC_API_URL: "...", ... }
 ```
@@ -325,8 +325,8 @@ Server reads `.env` then `.env.local` (local takes precedence).
 **`createManicServer(options)`** — Bootstraps the full Manic server. Called from `~manic.ts`.
 
 ```tsx
-import { createManicServer } from "manicjs/server";
-import app from "./app/index.html";
+import { createManicServer } from 'manicjs/server';
+import app from './app/index.html';
 
 await createManicServer({ html: app });
 
@@ -344,9 +344,9 @@ Internally: loads env files → generates route manifest → loads config → mo
 **`apiLoaderPlugin(apiDir?)`** — Scans `app/api/` for Hono modules and mounts them.
 
 ```tsx
-import { apiLoaderPlugin } from "manicjs/plugins";
+import { apiLoaderPlugin } from 'manicjs/plugins';
 
-const { app, routes } = await apiLoaderPlugin("app/api");
+const { app, routes } = await apiLoaderPlugin('app/api');
 // app: Hono instance with all API routes mounted
 // routes: string[] — list of mounted route paths
 ```
@@ -354,9 +354,9 @@ const { app, routes } = await apiLoaderPlugin("app/api");
 **`fileImporterPlugin(publicDir?)`** — Serves static files from the specified directory.
 
 ```tsx
-import { fileImporterPlugin } from "manicjs/plugins";
+import { fileImporterPlugin } from 'manicjs/plugins';
 
-const staticApp = fileImporterPlugin("public");
+const staticApp = fileImporterPlugin('public');
 ```
 
 ---
@@ -366,21 +366,21 @@ const staticApp = fileImporterPlugin("public");
 **`defineConfig(config)`** — Type-safe config helper (identity function for autocomplete).
 
 ```tsx
-import { defineConfig } from "manicjs/config";
+import { defineConfig } from 'manicjs/config';
 
 export default defineConfig({
-  app: { name: "my-app" },
+  app: { name: 'my-app' },
   server: { port: 3000, hmr: true },
   router: {
     viewTransitions: true,
     preserveScroll: false,
-    scrollBehavior: "auto",
+    scrollBehavior: 'auto',
   },
   build: {
     minify: true,
-    sourcemap: "inline",
+    sourcemap: 'inline',
     splitting: true,
-    outdir: ".manic",
+    outdir: '.manic',
   },
   swagger: false,
   providers: [],
@@ -390,14 +390,19 @@ export default defineConfig({
 **`loadConfig(cwd?)`** — Reads and merges `manic.config.ts` with defaults. Cached after first call.
 
 ```tsx
-import { loadConfig } from "manicjs/config";
+import { loadConfig } from 'manicjs/config';
 const config = await loadConfig();
 ```
 
 #### Types
 
 ```tsx
-import type { ManicConfig, SwaggerConfig, ManicProvider, BuildContext } from "manicjs/config";
+import type {
+  ManicConfig,
+  SwaggerConfig,
+  ManicProvider,
+  BuildContext,
+} from 'manicjs/config';
 
 interface ManicConfig {
   app?: { name?: string };
@@ -405,11 +410,11 @@ interface ManicConfig {
   router?: {
     viewTransitions?: boolean;
     preserveScroll?: boolean;
-    scrollBehavior?: "auto" | "smooth";
+    scrollBehavior?: 'auto' | 'smooth';
   };
   build?: {
     minify?: boolean;
-    sourcemap?: boolean | "inline" | "external";
+    sourcemap?: boolean | 'inline' | 'external';
     splitting?: boolean;
     outdir?: string;
   };
@@ -455,12 +460,12 @@ API routes live in `app/api/` and must use **folder + index.ts** structure. Each
 
 ```typescript
 // app/api/hello/index.ts → /api/hello
-import { Hono } from "hono";
+import { Hono } from 'hono';
 
 const app = new Hono();
 
-app.get("/", (c) => c.json({ message: "Hello!" }));
-app.post("/", async (c) => {
+app.get('/', c => c.json({ message: 'Hello!' }));
+app.post('/', async c => {
   const body = await c.req.json();
   return c.json({ echo: body.text });
 });
@@ -474,11 +479,11 @@ export default app;
 
 ```typescript
 // manic.config.ts
-import { defineConfig } from "manicjs/config";
+import { defineConfig } from 'manicjs/config';
 
 export default defineConfig({
   app: {
-    name: "portfolio", // App name for logs/title
+    name: 'portfolio', // App name for logs/title
   },
   server: {
     port: 6070, // Default: 6070. Override with $PORT env var
@@ -487,13 +492,13 @@ export default defineConfig({
   router: {
     viewTransitions: true, // Default: true. Enables View Transitions API
     preserveScroll: false, // Default: false
-    scrollBehavior: "auto", // "auto" | "smooth"
+    scrollBehavior: 'auto', // "auto" | "smooth"
   },
   build: {
     minify: true,
-    sourcemap: "inline", // true | false | "inline" | "external"
+    sourcemap: 'inline', // true | false | "inline" | "external"
     splitting: true, // Code-splitting per route
-    outdir: ".manic",
+    outdir: '.manic',
   },
   swagger: false, // Set to { path: "/docs", documentation: {...} } to enable
 });
