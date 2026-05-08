@@ -9,6 +9,10 @@
     "react",
     "scaffold"
   ],
+  "homepage": "https://github.com/manic-js/create-manic#readme",
+  "bugs": {
+    "url": "https://github.com/manic-js/create-manic/issues"
+  },
   "license": "GPL-3.0",
   "author": "Rahuletto",
   "repository": {
@@ -23,14 +27,10 @@
     "template/**/*"
   ],
   "type": "module",
-  "dependencies": {
-    "@manicjs/tui": "workspace:*"
-  },
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/manic-js/create-manic#readme",
-  "bugs": {
-    "url": "https://github.com/manic-js/create-manic/issues"
+  "dependencies": {
+    "@manicjs/tui": "workspace:*"
   }
 }

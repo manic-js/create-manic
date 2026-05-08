@@ -1,18 +1,18 @@
-import { Link } from 'manicjs';
-import { useTheme } from 'manicjs/theme';
+import { Link } from "manicjs";
+import { useTheme } from "manicjs/theme";
 
-const CONTENT_STYLE = { viewTransitionName: 'content' };
-const LOGO_STYLE = { viewTransitionName: 'logo' };
-const SUBTITLE_STYLE = { viewTransitionName: 'subtitle' };
-const LINKBUTTON_STYLE = { viewTransitionName: 'linkbutton' };
-const DOCSBUTTON_STYLE = { viewTransitionName: 'docsbutton' };
-const CODE_COLOR = { color: '#E96464' };
+const CONTENT_STYLE = { viewTransitionName: "content" };
+const LOGO_STYLE = { viewTransitionName: "logo" };
+const SUBTITLE_STYLE = { viewTransitionName: "subtitle" };
+const LINKBUTTON_STYLE = { viewTransitionName: "linkbutton" };
+const DOCSBUTTON_STYLE = { viewTransitionName: "docsbutton" };
+const CODE_COLOR = { color: "#E96464" };
 
 function BuildHeader({ isDark }: { isDark: boolean }) {
   return (
     <>
       <img
-        src={isDark ? '/assets/wordmark.svg' : '/assets/wordmark-dark.svg'}
+        src={isDark ? "/assets/wordmark.svg" : "/assets/wordmark-dark.svg"}
         alt="MANIC."
         className="w-84 max-sm:w-64 transition-all duration-250"
         style={LOGO_STYLE}
@@ -31,14 +31,14 @@ function BuildCommands() {
       <code className="border-box my-4 px-4 py-2">
         <span className="font-semibold" style={CODE_COLOR}>
           bun
-        </span>{' '}
+        </span>{" "}
         run build
       </code>
       <span>(or)</span>
       <code className="border-box my-4 px-4 py-2">
         <span className="font-semibold" style={CODE_COLOR}>
           manic
-        </span>{' '}
+        </span>{" "}
         build
       </code>
     </div>
@@ -67,10 +67,7 @@ export default function Build() {
 
   return (
     <main className="md:py-14 md:px-24 py-6 px-12 bg-background min-h-screen flex items-center justify-center text-foreground">
-      <div
-        style={CONTENT_STYLE}
-        className="flex items-center justify-center flex-col gap-5"
-      >
+      <div style={CONTENT_STYLE} className="flex items-center justify-center flex-col gap-5">
         <BuildHeader isDark={isDark} />
         <BuildCommands />
         <BuildFooter />
