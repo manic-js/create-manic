@@ -1,12 +1,9 @@
-import { Link } from 'manicjs';
 import { useTheme } from 'manicjs/theme';
 import { useState, useCallback } from 'react';
 
-const CONTENT_STYLE = { viewTransitionName: 'content' };
 const LOGO_STYLE = { viewTransitionName: 'logo' };
 const SUBTITLE_STYLE = { viewTransitionName: 'subtitle' };
 const LINKBUTTON_STYLE = { viewTransitionName: 'linkbutton' };
-const DOCSBUTTON_STYLE = { viewTransitionName: 'docsbutton' };
 
 export default function Home() {
   const { isDark } = useTheme();
@@ -86,13 +83,15 @@ export default function Home() {
       </div>
 
       <div className="mt-6 flex gap-6 md:flex-row flex-col items-start">
-        <Link
-          to="/build"
+        <a
+          href="https://www.manicjs.tech/docs/framework/benchmarks"
+          target="_blank"
+          rel="noopener noreferrer"
           className="btn-primary flex items-center justify-center"
           style={LINKBUTTON_STYLE}
         >
           How fast? →
-        </Link>
+        </a>
         <a
           href="https://manic-docs.vercel.app/"
           target="_blank"
