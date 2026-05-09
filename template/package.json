@@ -14,7 +14,7 @@
   "dependencies": {
     "@manicjs/api-docs": "^1.0.5",
     "@manicjs/mcp": "^1.0.5",
-    "@manicjs/seo": "^1.0.5",
+    "@manicjs/seo": "^1.0.6",
     "@manicjs/tailwind": "^1.0.5",
     "hono": "^4.12.18",
     "manicjs": "^1.0.7",
