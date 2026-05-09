@@ -1,6 +1,8 @@
 .github/
 .agents/
 node_modules/
+template/node_modules/
+**/node_modules/**
 tests/
 **/*.test.*
 **/__tests__/

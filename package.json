@@ -1,6 +1,6 @@
 {
   "name": "create-manic",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Create a new Manic app",
   "keywords": [
     "bun",
@@ -32,6 +32,7 @@
     "access": "public"
   },
   "scripts": {
+    "prepack": "node -e \"require('node:fs').rmSync('template/node_modules',{recursive:true,force:true})\"",
     "ci:lint": "bunx --bun oxlint --config .oxlintrc.json .",
     "ci:format": "bunx --bun oxfmt --check --config .oxfmt.json .",
     "ci:typecheck": "if [ -f tsconfig.json ]; then bunx --bun tsc --noEmit; elif [ -f src/index.ts ]; then bunx --bun tsc --noEmit --module esnext --moduleResolution bundler --target es2022 src/index.ts; elif [ -f index.ts ]; then bunx --bun tsc --noEmit --module esnext --moduleResolution bundler --target es2022 index.ts; else echo \"No TypeScript entrypoint found\"; exit 1; fi",
