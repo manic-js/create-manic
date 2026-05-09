@@ -1,6 +1,6 @@
 {
   "name": "create-manic",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "description": "Create a new Manic app",
   "keywords": [
     "bun",
@@ -41,7 +41,7 @@
     "test": "bun test --timeout 30000"
   },
   "dependencies": {
-    "@manicjs/tui": "1.0.2-canary.0"
+    "@manicjs/tui": "^1.0.3"
   },
   "devDependencies": {}
 }

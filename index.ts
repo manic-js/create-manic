@@ -324,7 +324,7 @@ ${dim('--- --- --- --- ---')}
   if (isFrontend) {
     delete pkg.dependencies['hono'];
     delete pkg.dependencies['@manicjs/api-docs'];
-    pkg.dependencies['@manicjs/sitemap'] = 'latest';
+    pkg.dependencies['@manicjs/sitemap'] = '^1.0.5';
   } else if (!includeDocs) {
     delete pkg.dependencies['@manicjs/api-docs'];
   }
