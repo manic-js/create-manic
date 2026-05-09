@@ -337,17 +337,19 @@ ${dim('--- --- --- --- ---')}
   const plugins: string[] = [];
 
   if (isFrontend) {
+    imports.push('import { tailwind } from "@manicjs/tailwind";');
     imports.push('import { mcp } from "@manicjs/mcp";');
     imports.push('import { seo } from "@manicjs/seo";');
     imports.push('import { sitemap } from "@manicjs/sitemap";');
-    plugins.push('mcp()', 'seo()', 'sitemap()');
+    plugins.push('tailwind()', 'mcp()', 'seo()', 'sitemap()');
   } else {
     if (includeDocs)
       imports.push('import { apiDocs } from "@manicjs/api-docs";');
+    imports.push('import { tailwind } from "@manicjs/tailwind";');
     imports.push('import { mcp } from "@manicjs/mcp";');
     imports.push('import { seo } from "@manicjs/seo";');
     if (includeDocs) plugins.push('apiDocs()');
-    plugins.push('mcp()', 'seo()');
+    plugins.push('tailwind()', 'mcp()', 'seo()');
   }
 
   const pluginsBlock = `\n  plugins: [${plugins.join(', ')}],`;
