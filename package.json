@@ -24,7 +24,8 @@
   },
   "files": [
     "index.ts",
-    "template/**/*"
+    "template/**/*",
+    "LICENSE"
   ],
   "type": "module",
   "publishConfig": {
