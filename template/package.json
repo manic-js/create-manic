@@ -16,7 +16,7 @@
     "@manicjs/mcp": "^1.0.5",
     "@manicjs/seo": "^1.0.6",
     "@manicjs/sitemap": "^1.0.5",
-    "@manicjs/tailwind": "^1.0.6",
+    "@manicjs/tailwind": "^1.0.8",
     "hono": "^4.12.18",
     "manicjs": "^1.0.9",
     "react": "^19.2.6",
