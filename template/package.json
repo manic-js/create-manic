@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@manicjs/api-docs": "^1.0.5",
+    "@manicjs/lint": "^1.1.0",
     "@manicjs/mcp": "^1.0.5",
     "@manicjs/seo": "^1.0.6",
     "@manicjs/sitemap": "^1.0.5",
